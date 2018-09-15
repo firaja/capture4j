@@ -1,5 +1,11 @@
 language: java
 
+matrix:
+  include:
+  - os:  linux
+    jdk: oraclejdk8
+
+
 script: "mvn cobertura:cobertura"
 
 after_success:
