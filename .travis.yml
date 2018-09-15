@@ -10,7 +10,7 @@ env:
 install: true
 sudo: false
 
-script: "mvn cobertura:cobertura"
+script: "mvn clean install -P test-coverage"
 
 after_success:
 - bash <(curl -s https://codecov.io/bash)
