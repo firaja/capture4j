@@ -4,9 +4,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>cc.firaja.lib</groupId>
-  <artifactId>catcher</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <groupId>org.vorpal.catching</groupId>
+  <artifactId>catching</artifactId>
+  <version>1.0.0</version>
+
+  <name>Catching</name>
+
+  <developers>
+    <developer>
+      <name>David Bertoldi</name>
+    </developer>
+  </developers>
+
 
   <build>
     <plugins>

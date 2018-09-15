@@ -26,6 +26,7 @@ buildNumber.properties
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
+.idea/sonarlint/*
 
 # Gradle
 .idea/**/gradle.xml

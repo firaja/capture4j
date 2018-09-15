@@ -1,10 +1,8 @@
-package cc.firaja.lib;
+package org.vorpal.catching;
 
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
-
-import cc.firaja.lib.SimpleCatcher;
 
 
 public class SimpleHandlerTest
@@ -17,7 +15,7 @@ public class SimpleHandlerTest
         assertTrue(result);
     }
 
-    @SimpleCatcher(value = "true")
+    @EasyCapture(returns = "true")
     private Boolean returnBoolean() throws Throwable
     {
         throw new Exception();
@@ -29,7 +27,7 @@ public class SimpleHandlerTest
         noReturn();
     }
 
-    @SimpleCatcher(value = "1b.")
+    @EasyCapture(returns = "1b.")
     private void noReturn() throws Throwable
     {
         throw new Exception();

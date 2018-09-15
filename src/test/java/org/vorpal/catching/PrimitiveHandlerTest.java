@@ -1,8 +1,9 @@
-package cc.firaja.lib;
+package org.vorpal.catching;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.io.IOException;
 import java.nio.charset.CharacterCodingException;
 
 import org.junit.Test;
@@ -28,7 +29,7 @@ public class PrimitiveHandlerTest
         // GIVEN
 
         // WHEN
-        String result = throwWhatYouWant(new StringIndexOutOfBoundsException(), String.class);
+        String result = throwWhatYouWant(new IOException(), String.class);
 
         // THEN
         assertEquals("", result);
@@ -79,13 +80,13 @@ public class PrimitiveHandlerTest
         throwWhatYouWant(new ClassNotFoundException(), Boolean.class);
     }
 
-    @Catcher(handler = PrimitiveHandler.ZERO.class, exceptions = ArithmeticException.class)
-    @Catcher(handler = PrimitiveHandler.NULL_CHAR.class, exceptions = CharacterCodingException.class)
-    @Catcher(handler = PrimitiveHandler.NULL.class, exceptions = NullPointerException.class)
-    @Catcher(handler = PrimitiveHandler.FALSE.class, exceptions = IllegalArgumentException.class)
-    @Catcher(handler = PrimitiveHandler.TRUE.class, exceptions = ArithmeticException.class)
-    @Catcher(handler = PrimitiveHandler.TRUE.class, exceptions = IndexOutOfBoundsException.class)
-    @Catcher(handler = PrimitiveHandler.EMPTY.class, exceptions = StringIndexOutOfBoundsException.class)
+    @Capture(with = PrimitiveHandler.ZERO.class, what = ArithmeticException.class)
+    @Capture(with = PrimitiveHandler.NULL_CHAR.class, what = CharacterCodingException.class)
+    @Capture(with = PrimitiveHandler.NULL.class, what = NullPointerException.class)
+    @Capture(with = PrimitiveHandler.FALSE.class, what = IllegalArgumentException.class)
+    @Capture(with = PrimitiveHandler.TRUE.class, what = ArithmeticException.class)
+    @Capture(with = PrimitiveHandler.TRUE.class, what = IndexOutOfBoundsException.class)
+    @Capture(with = PrimitiveHandler.EMPTY.class, what = IOException.class)
     private <T> T throwWhatYouWant(Throwable t, Class<T> returnType) throws Throwable
     {
         throw t;

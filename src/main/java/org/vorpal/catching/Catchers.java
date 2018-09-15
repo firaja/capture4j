@@ -1,4 +1,4 @@
-package cc.firaja.lib;
+package org.vorpal.catching;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -11,6 +11,6 @@ import java.lang.annotation.Target;
 public @interface Catchers
 {
 
-    Catcher[] value();
+    Capture[] value();
 
 }

@@ -1,4 +1,4 @@
-package cc.firaja.lib;
+package org.vorpal.catching;
 
 public class PrimitiveHandler
 {

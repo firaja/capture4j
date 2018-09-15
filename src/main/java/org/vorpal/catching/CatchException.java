@@ -1,4 +1,4 @@
-package cc.firaja.lib;
+package org.vorpal.catching;
 
 class CatchException extends RuntimeException
 {

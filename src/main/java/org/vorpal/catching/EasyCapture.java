@@ -1,4 +1,4 @@
-package cc.firaja.lib;
+package org.vorpal.catching;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -8,10 +8,10 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface SimpleCatcher
+public @interface EasyCapture
 {
-    String value();
+    String returns();
 
-    Class<? extends Exception>[] exceptions() default { Exception.class };
+    Class<? extends Throwable>[] what() default { Throwable.class };
 
 }
