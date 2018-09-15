@@ -2,15 +2,13 @@ language: java
 
 jdk:
 - oraclejdk8
-
-env:
-  global:
-  - JAVA_HOME=/usr/lib/jvm/java-8-oracle
+- openjdk8
 
 install: true
 sudo: false
 
-script: "mvn clean install -P test-coverage"
+before_script:
+- pip install --user codecov
 
 after_success:
 - bash <(curl -s https://codecov.io/bash)
