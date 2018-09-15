@@ -5,7 +5,10 @@ jdk:
 - oraclejdk9
 - openjdk8
 
-script: "mvn cobertura:cobertura"
+install: true
+sudo: false
+
+script: "mvn clean verify"
 
 after_success:
 - bash <(curl -s https://codecov.io/bash)
