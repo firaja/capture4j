@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.vorpal.catching</groupId>
-  <artifactId>capture4j</artifactId>
+  <artifactId>catching</artifactId>
   <version>1.0.0</version>
 
-  <name>Capture4j</name>
+  <name>Catching</name>
 
   <developers>
     <developer>
@@ -17,22 +17,21 @@
   </developers>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>10</maven.compiler.source>
-    <maven.compiler.target>10</maven.compiler.target>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
   </properties>
 
 
   <build>
     <plugins>
       <plugin>
-        <groupId>com.github.m50d</groupId>
+        <groupId>org.codehaus.mojo</groupId>
         <artifactId>aspectj-maven-plugin</artifactId>
-        <version>1.11.1</version>
+        <version>1.11</version>
         <configuration>
-          <complianceLevel>10</complianceLevel>
-          <source>10</source>
-          <target>10</target>
+          <complianceLevel>1.8</complianceLevel>
+          <source>1.8</source>
+          <target>1.8</target>
           <showWeaveInfo>true</showWeaveInfo>
           <verbose>true</verbose>
           <Xlint>ignore</Xlint>
