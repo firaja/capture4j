@@ -5,11 +5,16 @@ jdk:
   - openjdk8
   - oraclejdk9
 
+addons:
+  apt:
+    packages:
+      - oracle-java9-installer
+
 install: true
 sudo: false
 
 before_script:
-- pip install --user codecov
+  - pip install --user codecov
 
 after_success:
-- bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash)
