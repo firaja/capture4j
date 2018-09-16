@@ -3,15 +3,18 @@ package org.vorpal.capture4j;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
+import org.vorpal.capture4j.handlers.BadHandler;
+import org.vorpal.capture4j.handlers.GoodHandler;
+
 
 public class GenericTest
 {
 
-    static class Risky
+    public static class Risky
     {
         private boolean b = false;
 
-        void setB()
+        public void setB()
         {
             this.b = true;
         }
@@ -43,8 +46,25 @@ public class GenericTest
         assertTrue(risky.isCorrect());
     }
 
-    @Capture(with = HandlerTest.class)
+    @Test(expected = CatchException.class)
+    public void testRiskyWithBadHandler()
+    {
+        // GIVEN
+
+        // WHEN
+        Risky risky = buildBadRisky();
+
+        // THEN
+    }
+
+    @Capture(with = GoodHandler.class)
     public Risky buildRisky()
+    {
+        return new Risky().done();
+    }
+
+    @Capture(with = BadHandler.class)
+    public Risky buildBadRisky()
     {
         return new Risky().done();
     }
