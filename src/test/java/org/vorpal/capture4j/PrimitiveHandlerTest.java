@@ -1,6 +1,7 @@
 package org.vorpal.capture4j;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
@@ -90,6 +91,25 @@ public class PrimitiveHandlerTest
     private <T> T throwWhatYouWant(Throwable t, Class<T> returnType) throws Throwable
     {
         throw t;
+    }
+
+    @Test
+    public void testOrder() throws Exception
+    {
+        // GIVEN
+
+        // WHEN
+        boolean result = getBoolean();
+
+        // THEN
+        assertFalse(result);
+    }
+
+    @Capture(with = PrimitiveHandler.FALSE.class)
+    @Capture(with = PrimitiveHandler.TRUE.class)
+    private boolean getBoolean() throws Exception
+    {
+        throw new Exception();
     }
 
 }

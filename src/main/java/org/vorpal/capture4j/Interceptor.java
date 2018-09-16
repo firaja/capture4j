@@ -122,7 +122,8 @@ public class Interceptor
 
     private static boolean isParent(Class<?> parent, Class<?> child)
     {
-        return parent.isAssignableFrom(child);
+        return Utils.wrap(parent).isAssignableFrom(Utils.wrap(child));
     }
+
 
 }
