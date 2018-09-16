@@ -1,4 +1,4 @@
-package org.vorpal.catching;
+package org.vorpal.capture4j;
 
 import org.junit.Ignore;
 

@@ -4,11 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.vorpal.catching</groupId>
-  <artifactId>catching</artifactId>
+  <groupId>org.vorpal.capture4j</groupId>
+  <artifactId>capture4j</artifactId>
   <version>1.0.0</version>
 
-  <name>Catching</name>
+  <name>Capture4j</name>
 
   <developers>
     <developer>
@@ -25,13 +25,13 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
+        <groupId>com.github.m50d</groupId>
         <artifactId>aspectj-maven-plugin</artifactId>
-        <version>1.11</version>
+        <version>1.11.1</version>
         <configuration>
-          <complianceLevel>1.8</complianceLevel>
-          <source>1.8</source>
-          <target>1.8</target>
+          <complianceLevel>10</complianceLevel>
+          <source>10</source>
+          <target>10</target>
           <showWeaveInfo>true</showWeaveInfo>
           <verbose>true</verbose>
           <Xlint>ignore</Xlint>

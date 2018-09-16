@@ -1,4 +1,4 @@
-package org.vorpal.catching;
+package org.vorpal.capture4j;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
@@ -17,17 +17,17 @@ public class Interceptor
     @Around("execution(* *(..)) && @annotation(Catchers)")
     public Object interceptCatchers(final ProceedingJoinPoint joinPoint) throws Throwable
     {
-        Method method = getMethod(joinPoint);
-        Class<?> returnType = method.getReturnType();
-        Catchers annotation = method.getAnnotation(Catchers.class);
-        Capture[] catchers = annotation.value();
-
         try
         {
             return joinPoint.proceed();
         }
         catch (Throwable theException)
         {
+            Method method = getMethod(joinPoint);
+            Class<?> returnType = method.getReturnType();
+            Catchers annotation = method.getAnnotation(Catchers.class);
+            Capture[] catchers = annotation.value();
+
             for (final Capture catcher : catchers)
             {
                 List<Class> classesException = Arrays.asList(catcher.what());
@@ -50,16 +50,14 @@ public class Interceptor
     @Around("execution(* *(..)) && @annotation(Capture)")
     public Object interceptCapture(final ProceedingJoinPoint joinPoint) throws Throwable
     {
-        Method method = getMethod(joinPoint);
-        Capture annotation = method.getAnnotation(Capture.class);
-
         try
         {
             return joinPoint.proceed();
         }
         catch (Throwable theException)
         {
-
+            Method method = getMethod(joinPoint);
+            Capture annotation = method.getAnnotation(Capture.class);
             List<Class> classesException = Arrays.asList(annotation.what());
             if (catchable(classesException, theException))
             {
@@ -71,7 +69,7 @@ public class Interceptor
 
     }
 
-    private boolean catchable(final List<Class> classesException, final Throwable theException)
+    private static boolean catchable(final List<Class> classesException, final Throwable theException)
     {
         for (final Class<?> classExcpetion : classesException)
         {
@@ -83,32 +81,31 @@ public class Interceptor
         return false;
     }
 
-    @Around("execution(* *(..)) && @annotation(org.vorpal.catching.EasyCapture)")
+    @Around("execution(* *(..)) && @annotation(org.vorpal.capture4j.EasyCapture)")
     public Object interceptSimpleCatchers(final ProceedingJoinPoint joinPoint) throws Throwable
     {
-        Method method = getMethod(joinPoint);
-        EasyCapture easyCatch = method.getAnnotation(EasyCapture.class);
-        String value = easyCatch.returns();
-        Class<?> returnType = method.getReturnType();
-
         try
         {
             return joinPoint.proceed();
         }
         catch (Throwable theException)
         {
+            Method method = getMethod(joinPoint);
+            EasyCapture easyCatch = method.getAnnotation(EasyCapture.class);
+            String value = easyCatch.returns();
+            Class<?> returnType = method.getReturnType();
             return SimpleHandler.handle(value, returnType);
         }
 
     }
 
-    private Method getMethod(ProceedingJoinPoint joinPoint)
+    private static Method getMethod(ProceedingJoinPoint joinPoint)
     {
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         return signature.getMethod();
     }
 
-    private Object handleIt(Class<? extends Handler> handlerClass)
+    private static Object handleIt(Class<? extends Handler> handlerClass)
     {
         Handler handler;
         try
