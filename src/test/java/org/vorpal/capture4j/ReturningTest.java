@@ -81,12 +81,12 @@ public class PrimitiveHandlerTest
         throwWhatYouWant(new ClassNotFoundException(), Boolean.class);
     }
 
-    @Capture(with = PrimitiveHandler.ZERO.class, what = ArithmeticException.class)
-    @Capture(with = PrimitiveHandler.NULL_CHAR.class, what = CharacterCodingException.class)
-    @Capture(with = PrimitiveHandler.NULL.class, what = NullPointerException.class)
-    @Capture(with = PrimitiveHandler.FALSE.class, what = IllegalArgumentException.class)
-    @Capture(with = PrimitiveHandler.TRUE.class, what = ArithmeticException.class)
-    @Capture(with = PrimitiveHandler.TRUE.class, what = IndexOutOfBoundsException.class)
+    @Capture(with = PrimitiveHandler.alwaysZero, what = ArithmeticException.class)
+    @Capture(with = PrimitiveHandler.alwaysNullChar, what = CharacterCodingException.class)
+    @Capture(with = PrimitiveHandler.alwaysNull, what = NullPointerException.class)
+    @Capture(with = PrimitiveHandler.alwaysFalse, what = IllegalArgumentException.class)
+    @Capture(with = PrimitiveHandler.alwaysTrue, what = ArithmeticException.class)
+    @Capture(with = PrimitiveHandler.alwaysTrue, what = IndexOutOfBoundsException.class)
     @Capture(with = PrimitiveHandler.EMPTY.class, what = IOException.class)
     private <T> T throwWhatYouWant(Throwable t, Class<T> returnType) throws Throwable
     {
