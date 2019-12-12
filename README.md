@@ -4,7 +4,7 @@
 [![codecov](https://codecov.io/gh/firaja/capture4j/branch/master/graph/badge.svg)](https://codecov.io/gh/firaja/capture4j)
 ![License](https://img.shields.io/github/license/firaja/capture4j)
 
-##Releases
+## Releases
 ### Final ![GitHub release (latest by date)](https://img.shields.io/github/v/release/firaja/capture4j)
 
 ### Beta ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/firaja/capture4j?include_prereleases)
