@@ -1,10 +1,10 @@
-package org.vorpal.capture4j;
+package dev.firaja.utils.capture4j;
 
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
-import org.vorpal.capture4j.handlers.BadHandler;
-import org.vorpal.capture4j.handlers.GoodHandler;
+import dev.firaja.utils.capture4j.handlers.BadHandler;
+import dev.firaja.utils.capture4j.handlers.GoodHandler;
 
 
 public class GenericTest

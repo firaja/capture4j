@@ -1,4 +1,4 @@
-package org.vorpal.capture4j;
+package dev.firaja.utils.capture4j;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
@@ -14,7 +14,7 @@ import org.aspectj.lang.reflect.MethodSignature;
 public class Interceptor
 {
 
-    @Around("execution(* *(..)) && @annotation(Catchers)")
+    @Around("execution(* *(..)) && @annotation(dev.firaja.utils.capture4j.Catchers)")
     public Object interceptCatchers(final ProceedingJoinPoint joinPoint) throws Throwable
     {
         try
@@ -47,7 +47,7 @@ public class Interceptor
 
     }
 
-    @Around("execution(* *(..)) && @annotation(Capture)")
+    @Around("execution(* *(..)) && @annotation(dev.firaja.utils.capture4j.Capture)")
     public Object interceptCapture(final ProceedingJoinPoint joinPoint) throws Throwable
     {
         try
@@ -81,7 +81,7 @@ public class Interceptor
         return false;
     }
 
-    @Around("execution(* *(..)) && @annotation(org.vorpal.capture4j.EasyCapture)")
+    @Around("execution(* *(..)) && @annotation(dev.firaja.utils.capture4j.EasyCapture)")
     public Object interceptSimpleCatchers(final ProceedingJoinPoint joinPoint) throws Throwable
     {
         try

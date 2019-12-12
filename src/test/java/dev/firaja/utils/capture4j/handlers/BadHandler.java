@@ -1,7 +1,7 @@
-package org.vorpal.capture4j.handlers;
+package dev.firaja.utils.capture4j.handlers;
 
-import org.vorpal.capture4j.GenericTest;
-import org.vorpal.capture4j.Handler;
+import dev.firaja.utils.capture4j.GenericTest;
+import dev.firaja.utils.capture4j.Handler;
 
 
 public class BadHandler implements Handler<GenericTest.Risky>

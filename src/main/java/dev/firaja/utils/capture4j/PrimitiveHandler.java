@@ -1,4 +1,4 @@
-package org.vorpal.capture4j;
+package dev.firaja.utils.capture4j;
 
 public class PrimitiveHandler
 {

@@ -1,4 +1,4 @@
-package org.vorpal.capture4j;
+package dev.firaja.utils.capture4j;
 
 import static org.junit.Assert.assertTrue;
 

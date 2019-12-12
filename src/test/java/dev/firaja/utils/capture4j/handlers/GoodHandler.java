@@ -1,8 +1,8 @@
-package org.vorpal.capture4j.handlers;
+package dev.firaja.utils.capture4j.handlers;
 
+import dev.firaja.utils.capture4j.GenericTest;
+import dev.firaja.utils.capture4j.Handler;
 import org.junit.Ignore;
-import org.vorpal.capture4j.GenericTest;
-import org.vorpal.capture4j.Handler;
 
 
 @Ignore
