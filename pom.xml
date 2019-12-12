@@ -28,12 +28,6 @@
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>aspectj-maven-plugin</artifactId>
             <version>1.11</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>tools</artifactId>
-                    <groupId>com.sun</groupId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <dependency>
