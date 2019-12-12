@@ -4,11 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.vorpal.capture4j</groupId>
+    <groupId>dev.firaja.utils</groupId>
     <artifactId>capture4j</artifactId>
-    <version>1.0.0</version>
+    <version>0.1.0-beta</version>
 
     <name>Capture4j</name>
+    <url>https://github.com/firaja/capture4j</url>
 
     <developers>
         <developer>
@@ -49,9 +50,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
-                    <source>${maven.compiler.target}</source>
-                    <target>${maven.compiler.source}</target>
-                    <!-- IMPORTANT -->
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
                     <useIncrementalCompilation>false</useIncrementalCompilation>
                 </configuration>
             </plugin>
@@ -61,8 +61,8 @@
                 <version>1.11</version>
                 <configuration>
                     <complianceLevel>1.8</complianceLevel>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
                     <showWeaveInfo>true</showWeaveInfo>
                     <verbose>true</verbose>
                     <Xlint>ignore</Xlint>
