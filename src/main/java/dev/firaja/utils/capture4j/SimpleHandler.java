@@ -7,7 +7,7 @@ import java.util.Map;
 class SimpleHandler
 {
 
-    private static final Map<Class, AbstractHandler> dispatcher = new HashMap<>();
+    private static final Map<Class<?>, AbstractHandler> dispatcher = new HashMap<>();
 
     static
     {
@@ -58,6 +58,7 @@ class SimpleHandler
 
     private SimpleHandler()
     {
+        //
     }
 
     private interface AbstractHandler<T>

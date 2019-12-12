@@ -1,13 +1,13 @@
 package dev.firaja.utils.capture4j;
 
-import java.lang.reflect.Method;
-import java.util.Arrays;
-import java.util.List;
-
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
+
+import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.List;
 
 
 @Aspect
@@ -20,8 +20,7 @@ public class Interceptor
         try
         {
             return joinPoint.proceed();
-        }
-        catch (Throwable theException)
+        } catch (Throwable theException)
         {
             Method method = getMethod(joinPoint);
             Class<?> returnType = method.getReturnType();
@@ -30,14 +29,14 @@ public class Interceptor
 
             for (final Capture catcher : catchers)
             {
-                List<Class> classesException = Arrays.asList(catcher.what());
+                List<Class<?>> classesException = Arrays.asList(catcher.what());
                 if (catchable(classesException, theException))
                 {
                     Class<? extends Handler> handlerClass = catcher.with();
                     Class<?> handlerType = handlerClass.getMethod(Handler.HANDLE_METHOD).getReturnType();
                     if (isParent(returnType, handlerType))
                     {
-                        return handleIt(handlerClass);
+                        return handleIt(handlerClass, theException);
                     }
                 }
 
@@ -53,15 +52,14 @@ public class Interceptor
         try
         {
             return joinPoint.proceed();
-        }
-        catch (Throwable theException)
+        } catch (Throwable theException)
         {
             Method method = getMethod(joinPoint);
             Capture annotation = method.getAnnotation(Capture.class);
-            List<Class> classesException = Arrays.asList(annotation.what());
+            List<Class<?>> classesException = Arrays.asList(annotation.what());
             if (catchable(classesException, theException))
             {
-                return handleIt(annotation.with());
+                return handleIt(annotation.with(), theException);
             }
 
             throw theException;
@@ -69,7 +67,7 @@ public class Interceptor
 
     }
 
-    private static boolean catchable(final List<Class> classesException, final Throwable theException)
+    private static boolean catchable(final List<Class<?>> classesException, final Throwable theException)
     {
         for (final Class<?> classExcpetion : classesException)
         {
@@ -87,8 +85,7 @@ public class Interceptor
         try
         {
             return joinPoint.proceed();
-        }
-        catch (Throwable theException)
+        } catch (Throwable theException)
         {
             Method method = getMethod(joinPoint);
             EasyCapture easyCatch = method.getAnnotation(EasyCapture.class);
@@ -105,24 +102,23 @@ public class Interceptor
         return signature.getMethod();
     }
 
-    private static Object handleIt(Class<? extends Handler> handlerClass)
+    private static Object handleIt(Class<? extends Handler> handlerClass, Throwable theException)
     {
-        Handler handler;
+        Handler<?> handler;
         try
         {
             handler = handlerClass.newInstance();
-        }
-        catch (InstantiationException | IllegalAccessException e)
+        } catch (InstantiationException | IllegalAccessException e)
         {
             throw new CatchException(
                     String.format("Could not instantiate with %s because: %s", handlerClass.getCanonicalName(), e.getMessage()));
         }
-        return handler.handle();
+        return handler.handle(theException);
     }
 
     private static boolean isParent(Class<?> parent, Class<?> child)
     {
-        return Utils.wrap(parent).isAssignableFrom(Utils.wrap(child));
+        return Capture4jUtils.wrap(parent).isAssignableFrom(Capture4jUtils.wrap(child));
     }
 
 

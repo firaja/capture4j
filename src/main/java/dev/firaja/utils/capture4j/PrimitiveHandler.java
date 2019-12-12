@@ -3,7 +3,18 @@ package dev.firaja.utils.capture4j;
 public class PrimitiveHandler
 {
 
-    public static class TRUE implements Handler<Boolean>
+    static abstract class AbstractPrimitiveHandler<T> implements Handler<T>
+    {
+        @Override
+        public T handle(Throwable theException)
+        {
+            return handle();
+        }
+
+        abstract T handle();
+    }
+
+    public static class TRUE extends AbstractPrimitiveHandler<Boolean>
     {
 
         @Override
@@ -13,7 +24,7 @@ public class PrimitiveHandler
         }
     }
 
-    public static class FALSE implements Handler<Boolean>
+    public static class FALSE extends AbstractPrimitiveHandler<Boolean>
     {
 
         @Override
@@ -23,7 +34,7 @@ public class PrimitiveHandler
         }
     }
 
-    public static class ZERO implements Handler<Number>
+    public static class ZERO extends AbstractPrimitiveHandler<Number>
     {
 
         @Override
@@ -33,7 +44,7 @@ public class PrimitiveHandler
         }
     }
 
-    public static class EMPTY implements Handler<String>
+    public static class EMPTY extends AbstractPrimitiveHandler<String>
     {
 
         @Override
@@ -43,7 +54,7 @@ public class PrimitiveHandler
         }
     }
 
-    public static class NULL implements Handler
+    public static class NULL extends AbstractPrimitiveHandler
     {
 
         @Override
@@ -53,7 +64,7 @@ public class PrimitiveHandler
         }
     }
 
-    public static class NULL_CHAR implements Handler<Character>
+    public static class NULL_CHAR extends AbstractPrimitiveHandler<Character>
     {
 
         @Override

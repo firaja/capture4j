@@ -12,6 +12,6 @@ public @interface EasyCapture
 {
     String returns();
 
-    Class<? extends Throwable>[] what() default { Throwable.class };
+    Class<? extends Throwable>[] what() default {Throwable.class};
 
 }

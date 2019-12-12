@@ -1,10 +1,6 @@
 package dev.firaja.utils.capture4j;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Repeatable;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
 
 @Repeatable(Catchers.class)
@@ -14,6 +10,6 @@ public @interface Capture
 {
     Class<? extends Handler> with();
 
-    Class<? extends Throwable>[] what() default { Throwable.class };
+    Class<? extends Throwable>[] what() default {Throwable.class};
 
 }

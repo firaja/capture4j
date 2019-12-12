@@ -13,7 +13,7 @@ public class BadHandler implements Handler<GenericTest.Risky>
     }
 
     @Override
-    public GenericTest.Risky handle()
+    public GenericTest.Risky handle(Throwable theException)
     {
         return null;
     }

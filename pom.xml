@@ -6,7 +6,7 @@
 
     <groupId>dev.firaja.utils</groupId>
     <artifactId>capture4j</artifactId>
-    <version>0.1.0-beta</version>
+    <version>0.1.1-beta</version>
 
     <name>Capture4j</name>
     <url>https://github.com/firaja/capture4j</url>
@@ -99,9 +99,22 @@
             </plugin>
 
         </plugins>
+
+
     </build>
 
-
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.1.1</version>
+                <configuration>
+                    <show>private</show>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
 
 
 </project>

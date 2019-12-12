@@ -9,7 +9,7 @@ import org.junit.Ignore;
 public class GoodHandler implements Handler<GenericTest.Risky>
 {
     @Override
-    public GenericTest.Risky handle()
+    public GenericTest.Risky handle(Throwable theException)
     {
         GenericTest.Risky risky = new GenericTest.Risky();
         risky.setB();

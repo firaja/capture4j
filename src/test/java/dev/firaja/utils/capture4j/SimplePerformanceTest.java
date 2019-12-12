@@ -8,7 +8,7 @@ public class SimplePerformanceTest
 
     private static final int WARMUP = 1000;
 
-    private static final int ROUNDS = WARMUP + 100000;
+    private static final int ROUNDS = WARMUP + 10000;
 
     @Test
     public void perform()
