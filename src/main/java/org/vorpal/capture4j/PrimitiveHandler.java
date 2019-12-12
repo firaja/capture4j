@@ -2,12 +2,6 @@ package org.vorpal.capture4j;
 
 public class PrimitiveHandler
 {
-    final static Class<? extends Handler<?>> alwaysZero = ZERO.class;
-    final static Class<? extends Handler<?>> alwaysNullChar = NULL_CHAR.class;
-    final static Class<? extends Handler> alwaysNull = NULL.class;
-    final static Class<? extends Handler<?>> alwaysFalse = FALSE.class;
-    final static Class<? extends Handler<?>> alwaysTrue = TRUE.class;
-    final static Class<? extends Handler<?>> alwaysEmptyString = EMPTY.class;
 
     public static class TRUE implements Handler<Boolean>
     {
