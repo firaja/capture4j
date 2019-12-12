@@ -1,13 +1,13 @@
+
+<div align="center">
+<img src="https://davidbertoldi.dev/resources/img/capture.png" align="center" style="max-width:80%;" />
+</div>
+
 # Capture4J
 
 [![Build Status](https://travis-ci.org/firaja/capture4j.svg?branch=master)](https://travis-ci.org/firaja/capture4j)
 [![codecov](https://codecov.io/gh/firaja/capture4j/branch/master/graph/badge.svg)](https://codecov.io/gh/firaja/capture4j)
 ![License](https://img.shields.io/github/license/firaja/capture4j)
-
-
-<div align="center">
-<img src="https://davidbertoldi.dev/resources/img/capture.png" align="center" style="max-width:80%;" />
-</div>
 
 ## Releases
 ### Final ![GitHub release (latest by date)](https://img.shields.io/github/v/release/firaja/capture4j)
