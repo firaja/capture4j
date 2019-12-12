@@ -1,8 +1,3 @@
-
-<div align="center">
-<img src="https://davidbertoldi.dev/resources/img/capture.png" align="center" style="max-width:80%;" />
-</div>
-
 # Capture4J
 
 [![Build Status](https://travis-ci.org/firaja/capture4j.svg?branch=master)](https://travis-ci.org/firaja/capture4j)
