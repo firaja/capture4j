@@ -3,7 +3,16 @@ language: java
 jdk:
   - oraclejdk8
   - openjdk8
+  - oraclejdk11
+  - openjdk11
+  - openjdk-ea
+  - oraclejdk-ea
 
+matrix:
+  allow_failures:
+    - jdk: openjdk-ea oraclejdk-ea
+
+dist: trusty
 
 install: true
 sudo: false
