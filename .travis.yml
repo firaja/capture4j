@@ -2,6 +2,8 @@ sudo: false
 
 language: java
 
+dist: trusty
+
 matrix:
   include:
     - name: OpenJDK 8
