@@ -1,4 +1,4 @@
-sudo: true
+sudo: false
 
 language: java
 
@@ -6,11 +6,8 @@ matrix:
   include:
     - name: OpenJDK 8
       jdk: openjdk8
-    - name: OpenJDK 11
-      jdk: openjdk11
-      before_install:
-        - rm "${JAVA_HOME}/lib/security/cacerts"
-        - ln -s /etc/ssl/certs/java/cacerts "${JAVA_HOME}/lib/security/cacerts"
+    - name: OracleJDK 11
+      jdk: oraclejdk11
 
 cache:
   directories:
