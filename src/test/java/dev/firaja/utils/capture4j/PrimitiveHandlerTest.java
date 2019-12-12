@@ -1,13 +1,11 @@
 package dev.firaja.utils.capture4j;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.nio.charset.CharacterCodingException;
 
-import org.junit.Test;
+import static org.junit.Assert.*;
 
 
 public class PrimitiveHandlerTest
@@ -110,6 +108,24 @@ public class PrimitiveHandlerTest
     private boolean getBoolean() throws Exception
     {
         throw new Exception();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void testExceptionStillThrown()
+    {
+        // GIVEN
+
+        // WHEN
+        Object result = returnObject();
+        result.toString();
+
+        // THEN
+    }
+
+    @Capture(with = PrimitiveHandler.NULL.class, what = NullPointerException.class)
+    private Object returnObject()
+    {
+        throw new NullPointerException();
     }
 
 }
