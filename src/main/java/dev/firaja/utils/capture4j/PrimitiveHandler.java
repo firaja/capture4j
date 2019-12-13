@@ -1,5 +1,6 @@
 package dev.firaja.utils.capture4j;
 
+
 public class PrimitiveHandler
 {
 

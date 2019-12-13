@@ -89,7 +89,7 @@ public class GenericTest
 
         //THEN
         assertNull(uglyObject);
-        String expectedOutput = SystemOutHandler.getMessage(exc) + '\n';
+        String expectedOutput = SystemOutHandler.getDefaultMessage(exc) + '\n';
         assertEquals(expectedOutput, outContent.toString());
     }
 

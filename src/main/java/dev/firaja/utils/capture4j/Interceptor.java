@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @Aspect
-public class Interceptor
+class Interceptor
 {
 
     @Around("execution(* *(..)) && @annotation(dev.firaja.utils.capture4j.Catchers)")
