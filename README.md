@@ -91,7 +91,7 @@ public String doSomething()
 }
 ```
 
-Or even use a custom handler for standard of custom exceptions
+Or even use a custom handler for standard or custom exceptions
 ```java
 @Capture(what = MyException.class, with = MyHandler.class)
 public long doSomething()
