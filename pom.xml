@@ -6,10 +6,11 @@
 
     <groupId>dev.firaja.utils</groupId>
     <artifactId>capture4j</artifactId>
-    <version>0.1.1-beta</version>
+    <version>0.1.1</version>
 
     <name>Capture4j</name>
     <url>https://github.com/firaja/capture4j</url>
+
 
     <developers>
         <developer>

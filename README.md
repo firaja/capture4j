@@ -5,7 +5,9 @@
 [![codecov](https://codecov.io/gh/firaja/capture4j/branch/master/graph/badge.svg)](https://codecov.io/gh/firaja/capture4j)
 ![License](https://img.shields.io/github/license/firaja/capture4j)
 
-This library aims to remove from your code bulky try-catch blocks and make your code easier to read and maintain.
+This library aims to remove from your code bulky try-catch/if-else blocks and make your code easier to read and maintain.
+
+Write less repetitive checks and enjoy coding efficiently.
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -26,13 +28,13 @@ cd capture4j
 mvn clean install
 ```
 
-#### Maven
+#### Maven (requires GitHub Authentication)
 Insert the following dependency in your `pom.xml`
 ```xml
 <dependency>
   <groupId>dev.firaja.utils</groupId>
   <artifactId>capture4j</artifactId>
-  <version>0.1.1-beta</version>
+  <version>0.1.1</version>
 </dependency>
 ```
 Then run
