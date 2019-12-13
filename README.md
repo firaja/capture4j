@@ -1,6 +1,7 @@
 # Capture4J
 
 [![Build Status](https://travis-ci.org/firaja/capture4j.svg?branch=master)](https://travis-ci.org/firaja/capture4j)
+[![Maintainability](https://api.codeclimate.com/v1/badges/6eeea4a9b5c9207ffbea/maintainability)](https://codeclimate.com/github/firaja/capture4j/maintainability)
 [![codecov](https://codecov.io/gh/firaja/capture4j/branch/master/graph/badge.svg)](https://codecov.io/gh/firaja/capture4j)
 ![License](https://img.shields.io/github/license/firaja/capture4j)
 
